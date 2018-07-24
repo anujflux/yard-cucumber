@@ -14,9 +14,13 @@ $(function() {
     <span class="name"><%= @feature.value %></span>
   </div>
 
+  <div>
+    Total scenarios: <%= @feature.total_scenarios %>
+  </div>
+
   <% if @feature.comments.length > 0 %>
   <div class="comments developer">
-    <%= htmlify_with_newlines @feature.comments %>  
+    <%= htmlify_with_newlines @feature.comments %>
   </div>
   <% end %>
 
@@ -36,4 +40,3 @@ $(function() {
 
   <%= yieldall %>
 </div>
-
