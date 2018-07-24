@@ -136,6 +136,9 @@ def generate_featuredirectories_list
     :list_filename => "featuredirectories_list.html"
 end
 
+def generate_coverage_list
+  puts "Does this work?"
+end
 
 # Helpler method to generate a full_list page of the specified objects with the
 # specified type.

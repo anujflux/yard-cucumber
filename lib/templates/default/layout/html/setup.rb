@@ -60,7 +60,9 @@ def yard_cucumber_menus
     "directories" => { :type => 'featuredirectories', :title => 'Features by Directory', :search_title => 'Features by Directory' },
     "tags" => { :type => 'tag', :title => 'Tags', :search_title => 'Tags' },
     "step definitions" => { :type => 'stepdefinition', :title => 'Step Definitions', :search_title => 'Step Defs' },
-    "steps" => { :type => 'step', :title => 'Steps', :search_title => 'Steps' } }
+    "steps" => { :type => 'step', :title => 'Steps', :search_title => 'Steps' },
+    "coverage" =>{ :type => 'coverage', :title => 'Coverage', :search_title => 'Coverage' }
+   }
 end
 
 #
@@ -125,6 +127,8 @@ def rewrite_nav_url(nav_url)
     nav_url.gsub('class_list.html','step_list.html')
   elsif object.is_a?(YARD::CodeObjects::Cucumber::StepTransformersObject) && current_menu_lists.include?('step definitions')
     nav_url.gsub('class_list.html','stepdefinition_list.html')
+  elsif current_menu_lists.include?('coverage')
+    nav_url.gsub('class_list.html','coverage.html')
   else
     nav_url
   end
